@@ -1,0 +1,9 @@
+transformers
+addict
+yapf
+timm
+supervision
+opencv-python
+pycocotools-windows
+einops
+scipy
