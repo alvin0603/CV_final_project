@@ -8,60 +8,34 @@ SAMPLE_NUM_PER_CLASS = 1e18
 BOX_THRESHOLD = 0.35
 TEXT_THRESHOLD = 0.25
 
-MVTEC_PROMPTS = {
-    "bottle": "bottle . broken bottle . glass defect .",
-    "cable": "cable . cut cable . bent wire .",
-    "capsule": "capsule . dented capsule . scratch .",
-    "carpet": "carpet . hole . cut . color stain .",
-    "grid": "grid . bent grid . broken metal .",
-    "hazelnut": "hazelnut . hole . crack .",
-    "leather": "leather . cut . poke . bruise .",
-    "metal_nut": "metal nut . scratch . bent .",
-    "pill": "pill . scratch . contamination .",
-    "screw": "screw . thread defect . scratch .",
-    "tile": "tile . crack . glue . gray stroke .",
-    "toothbrush": "toothbrush . defective bristles .",
-    "transistor": "transistor . bent lead . damaged .",
-    "wood": "wood . hole . scratch . liquid .",
-    "zipper": "zipper . broken zipper . fabric defect ."
-}
-
-CHEST_XRAY_PROMPTS = {
-    "lung": "pneumonia . lung opacity . effusion . infiltration . mass ."
-}
-
-PATHOLOGY_PROMPTS = {
-    "cell": "cancer . tumor . metastasis . malignant . carcinoma ."
-}
-
 DATASET_CONFIGS = {
     "MVTec": {
         "root": os.path.join(PROJECT_ROOT, "data", "MVTec"),
         "output": os.path.join(PROJECT_ROOT, "outputs", "MVTec_Eval"),
-        "categories": list(MVTEC_PROMPTS.keys()),
-        "prompts": MVTEC_PROMPTS,
+        "categories": ["bottle", "cable", "capsule", "carpet", "grid", "hazelnut", "leather", "metal_nut", "pill", "screw", "tile", "toothbrush", "transistor", "wood", "zipper"],
+        "prompts": {
+            "bottle": "bottle . broken bottle . glass defect .",
+            "cable": "cable . cut cable . bent wire .",
+            "capsule": "capsule . dented capsule . scratch .",
+            "carpet": "carpet . hole . cut . color stain .",
+            "grid": "grid . bent grid . broken metal .",
+            "hazelnut": "hazelnut . hole . crack .",
+            "leather": "leather . cut . poke . bruise .",
+            "metal_nut": "metal nut . scratch . bent .",
+            "pill": "pill . scratch . contamination .",
+            "screw": "screw . thread defect . scratch .",
+            "tile": "tile . crack . glue . gray stroke .",
+            "toothbrush": "toothbrush . defective bristles .",
+            "transistor": "transistor . bent lead . damaged .",
+            "wood": "wood . hole . scratch . liquid .",
+            "zipper": "zipper . broken zipper . fabric defect ."
+        },
         "default_prompt": "defect . anomaly .",
         "normal_folder": "good"
     },
-    "ChestXray": {
-        "root": os.path.join(PROJECT_ROOT, "data", "ChestXray"),
-        "output": os.path.join(PROJECT_ROOT, "outputs", "ChestXray_Eval"),
-        "categories": list(CHEST_XRAY_PROMPTS.keys()),
-        "prompts": CHEST_XRAY_PROMPTS,
-        "default_prompt": "medical anomaly . disease .",
-        "normal_folder": "normal"
-    },
-    "Pathology": {
-        "root": os.path.join(PROJECT_ROOT, "data", "Pathology"),
-        "output": os.path.join(PROJECT_ROOT, "outputs", "Pathology_Eval"),
-        "categories": list(PATHOLOGY_PROMPTS.keys()),
-        "prompts": PATHOLOGY_PROMPTS,
-        "default_prompt": "cell anomaly . cancer .",
-        "normal_folder": "normal"
-    },
-    "medical": {
-        "root": "data/medical", 
-        "output": "outputs/medical",
+    "X-Ray": {
+        "root": os.path.join(PROJECT_ROOT, "data", "medical"), 
+        "output": os.path.join(PROJECT_ROOT, "outputs", "medical"),
         "categories": ["Pneumonia", "Nodule", "Effusion", "Infiltration"],
         "prompts": {
             "Pneumonia": "pneumonia",
@@ -72,6 +46,16 @@ DATASET_CONFIGS = {
         "default_prompt": "disease",
         "normal_folder": "good"
     },
+    "Pathology": {
+        "root": os.path.join(PROJECT_ROOT, "data", "Pathology"),
+        "output": os.path.join(PROJECT_ROOT, "outputs", "Pathology_Eval"),
+        "categories": ["cell"],
+        "prompts": {
+            "cell": "cancer . tumor . metastasis . malignant . carcinoma ."
+        },
+        "default_prompt": "cell anomaly . cancer .",
+        "normal_folder": "normal"
+    }
 }
 
-ACTIVE_DATASETS = ["medical"]
+ACTIVE_DATASETS = ["X-Ray"]
