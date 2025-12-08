@@ -58,4 +58,4 @@ DATASET_CONFIGS = {
     }
 }
 
-ACTIVE_DATASETS = ["X-Ray"]
+ACTIVE_DATASETS = ["Pathology"]
