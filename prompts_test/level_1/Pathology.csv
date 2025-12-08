@@ -1,0 +1,2 @@
+Category,Image_AP,Image_AUC,Accuracy,F1_Score,Precision,Recall,Max_Conf_Anomaly,Max_Conf_Normal
+cell,0.5392,0.6035,0.5002,0.6668,0.5001,1.0,0.6042385101318359,0.5981336236000061
