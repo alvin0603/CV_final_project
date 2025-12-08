@@ -18,6 +18,7 @@ outputs/
 # Dataset
 data/
 !data/.keep
+downloads/
 
 # Model weights
 weights/
@@ -29,3 +30,6 @@ weights/
 # OS files
 .DS_Store
 Thumbs.db
+
+desktop.ini
+test.py

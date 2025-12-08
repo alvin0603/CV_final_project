@@ -1,5 +1,6 @@
-from tqdm import tqdm
 import os
+os.add_dll_directory(r"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\bin")
+from tqdm import tqdm
 import src.config as cfg
 from src.detector import GroundingDINODetector
 from src.utils import get_balanced_test_images, save_image_safe, calculate_metrics_advanced, save_metrics_to_csv

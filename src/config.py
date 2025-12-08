@@ -4,7 +4,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WEIGHTS_DIR = os.path.join(PROJECT_ROOT, "weights")
 MODEL_CONFIG_PATH = os.path.join(PROJECT_ROOT, "groundingdino_lib", "groundingdino", "config", "GroundingDINO_SwinT_OGC.py")
 
-SAMPLE_NUM_PER_CLASS = 100
+SAMPLE_NUM_PER_CLASS = 1e18
 BOX_THRESHOLD = 0.35
 TEXT_THRESHOLD = 0.25
 
@@ -58,7 +58,20 @@ DATASET_CONFIGS = {
         "prompts": PATHOLOGY_PROMPTS,
         "default_prompt": "cell anomaly . cancer .",
         "normal_folder": "normal"
-    }
+    },
+    "medical": {
+        "root": "data/medical", 
+        "output": "outputs/medical",
+        "categories": ["Pneumonia", "Nodule", "Effusion", "Infiltration"],
+        "prompts": {
+            "Pneumonia": "pneumonia",
+            "Nodule": "nodule",
+            "Effusion": "pleural effusion",
+            "Infiltration": "infiltration"
+        },
+        "default_prompt": "disease",
+        "normal_folder": "good"
+    },
 }
 
-ACTIVE_DATASETS = ["Pathology"]
+ACTIVE_DATASETS = ["medical"]
