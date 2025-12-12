@@ -1,0 +1,5 @@
+Category,Image_AP,Image_AUC,Max_Conf_Anomaly,Max_Conf_Normal
+Pneumonia,0.3109,0.7484,0.7092,0.5045
+Nodule,0.5810,0.7164,0.6811,0.5045
+Effusion,0.8221,0.7957,0.7477,0.5045
+Infiltration,0.8137,0.7306,0.6954,0.5045

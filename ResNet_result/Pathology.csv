@@ -1,0 +1,2 @@
+Category,Image_AP,Image_AUC,Max_Conf_Anomaly,Max_Conf_Normal
+Cancer,0.9956,0.9949,1.0000,1.0000
