@@ -34,3 +34,16 @@ Thumbs.db
 desktop.ini
 test.py
 groundingdino_lib/setup.py
+
+# Experiment results
+*.csv
+*_result/
+ResNet_result/
+baseline_result/
+fullsampled_baseline_result/
+yolo_result/
+
+# Image outputs
+*.jpg
+*.png
+!prompts_test/*.png

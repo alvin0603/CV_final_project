@@ -8,7 +8,11 @@ SAMPLE_NUM_PER_CLASS = 1e18
 BOX_THRESHOLD = 0.35
 TEXT_THRESHOLD = 0.25
 
-PROMPT_LEVEL = 2
+IOU_THRESHOLD = 0.5
+CHESTXRAY_BBOX_CSV = os.path.join(PROJECT_ROOT, "downloads", "nih", "BBox_List_2017.csv")
+BBOX_ACTIVE_DATASETS = ["medical"]
+
+PROMPT_LEVEL = 1
 
 MVTEC_L1 = {
     "bottle": "bottle",
@@ -146,4 +150,4 @@ DATASET_CONFIGS = {
     }
 }
 
-ACTIVE_DATASETS = ["medical", "Pathology", "MVTec"]
+ACTIVE_DATASETS = ["medical"]
